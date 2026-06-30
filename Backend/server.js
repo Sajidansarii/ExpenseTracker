@@ -7,8 +7,13 @@ const expenseRoutes = require("./routes/expenseRoutes");
 
 app.use("/api", expenseRoutes);     
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+
+app.get("/", (req, res) => {
+  res.send("Backend is Running 🚀");
 });
 
+const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
